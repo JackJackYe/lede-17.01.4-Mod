@@ -64,7 +64,7 @@ jobs:
           echo "::set-output name=mixkey2::$mixkey2"
 
       - name: Cache1
-        uses: JackJackYe/cachewrtbuild@main
+        uses: HiGarfield/cachewrtbuild@main
         with:
           ccache: 'true'
           mixkey: ${{ steps.gen_cache_mixkey.outputs.mixkey1 }}
@@ -72,7 +72,7 @@ jobs:
           skip_saving: 'true'
       
       - name: Cache2
-        uses: JackJackYe/cachewrtbuild@main
+        uses: HiGarfield/cachewrtbuild@main
         with:
           ccache: 'true'
           mixkey: ${{ steps.gen_cache_mixkey.outputs.mixkey2 }}
