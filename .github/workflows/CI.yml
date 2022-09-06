@@ -18,7 +18,7 @@ jobs:
       contents: write
     env:
       TARGET_DEVICE: ${{ matrix.target }}
-      SOURCE_REPO: 'JackJackYe/lede-17.01.4-Mod'
+      SOURCE_REPO: 'HiGarfield/lede-17.01.4-Mod'
     strategy:
       max-parallel: 20
       matrix:
