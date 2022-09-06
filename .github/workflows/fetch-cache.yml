@@ -11,7 +11,7 @@ jobs:
     name: fetch cache
     runs-on: ubuntu-22.04
     env:
-      SOURCE_REPO: 'HiGarfield/lede-17.01.4-Mod'
+      SOURCE_REPO: 'JackJackYe/lede-17.01.4-Mod'
 
     steps:
       - name: Checkout
@@ -64,7 +64,7 @@ jobs:
           echo "::set-output name=mixkey2::$mixkey2"
 
       - name: Cache1
-        uses: HiGarfield/cachewrtbuild@main
+        uses: JackJackYe/cachewrtbuild@main
         with:
           ccache: 'true'
           mixkey: ${{ steps.gen_cache_mixkey.outputs.mixkey1 }}
@@ -72,7 +72,7 @@ jobs:
           skip_saving: 'true'
       
       - name: Cache2
-        uses: HiGarfield/cachewrtbuild@main
+        uses: JackJackYe/cachewrtbuild@main
         with:
           ccache: 'true'
           mixkey: ${{ steps.gen_cache_mixkey.outputs.mixkey2 }}
