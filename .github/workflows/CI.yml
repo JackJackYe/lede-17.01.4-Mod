@@ -22,7 +22,7 @@ jobs:
     strategy:
       max-parallel: 20
       matrix:
-        target: [ "domywifi-dw33d" ]
+        target: [ "dl","domywifi-dw33d" ]
 
     steps:
       - name: Checkout
