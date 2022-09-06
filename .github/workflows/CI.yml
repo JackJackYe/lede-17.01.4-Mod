@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Repository dispatch
-        uses:  JackJackYe/repository-dispatch@v2
+        uses:  HiGarfield/repository-dispatch@v2
         with:
           token: ${{ secrets.MY_TOKEN }}
           repository: ${{ secrets.SECOND_REPO }}
@@ -32,7 +32,7 @@ jobs:
       contents: write
     env:
       TARGET_DEVICE: ${{ matrix.target }}
-      SOURCE_REPO: ' JackJackYe/lede-17.01.4-Mod'
+      SOURCE_REPO: ' HiGarfield/lede-17.01.4-Mod'
     strategy:
       max-parallel: 20
       matrix:
@@ -118,7 +118,7 @@ jobs:
 
       - name: Cache
         if: ${{ env.TARGET_DEVICE != 'dl' }}
-        uses: JackJackYe/cachewrtbuild@main
+        uses: HiGarfield/cachewrtbuild@main
         with:
           ccache: 'true'
           mixkey: ${{ steps.gen_cache_mixkey.outputs.mixkey }}
@@ -162,7 +162,7 @@ jobs:
 
       - name: Upload assets to releases
         if: ${{ steps.compile.outputs.status == 'success' }} || ${{ steps.download_dl.outputs.status == 'success' }}
-        uses: JackJackYe/upload-to-github-release@v1
+        uses: HiGarfield/upload-to-github-release@v1
         env:
           GITHUB_TOKEN: ${{ env.MY_TOKEN }}
         with:
@@ -172,7 +172,7 @@ jobs:
           draft: false
 
       - name: Remove old releases
-        uses: JackJackYe/delete-older-releases@master
+        uses: HiGarfield/delete-older-releases@master
         continue-on-error: true
         with:
           keep_latest: 1
