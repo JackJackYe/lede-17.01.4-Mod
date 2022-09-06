@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   do_repository_dispatch:
-    if: ${{ github.repository == ' JackJackYe/lede-17.01.4-Mod' }} && ${{ github.event_name == 'push' }}
+    if: ${{ github.repository == 'HiGarfield/lede-17.01.4-Mod' }} && ${{ github.event_name == 'push' }}
     name: repository dispatch
     runs-on: ubuntu-22.04
     steps:
